@@ -1,7 +1,7 @@
 {
   "name": "IRIS | GUARDIAN",
   "short_name": "IRIS",
-  "description": "Your personal AI assistant powered by Claude",
+  "description": "Your personal productivity partner",
   "start_url": "/?utm_source=pwa",
   "display": "standalone",
   "background_color": "#1f1b16",
