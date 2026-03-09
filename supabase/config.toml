@@ -1,0 +1,36 @@
+# For detailed configuration reference documentation, visit:
+# https://supabase.com/docs/guides/local-development/cli/config
+project_id = "IRIS-Productivity-Partner_v1.0"
+
+[storage.buckets.user-files]
+public = false
+file_size_limit = "50MiB"
+
+[auth]
+enabled = true
+site_url = "http://localhost:3000"
+additional_redirect_urls = ["http://localhost:3000/**"]
+# Signups are disabled at the Supabase project level — users are invited manually.
+enable_signup = false
+
+[auth.email]
+enable_signup = true
+enable_confirmations = true
+secure_password_change = true
+
+# Edge function configuration
+# All functions disable relay-level JWT verification because:
+# 1. The relay's verify_jwt is incompatible with Supabase's asymmetric JWT Signing Keys
+# 2. All functions handle auth internally via requireAuth() → supabase.auth.getUser()
+# See: https://supabase.com/docs/guides/functions/auth
+[functions.memory]
+verify_jwt = false
+
+[functions.embed]
+verify_jwt = false
+
+[functions.push-send]
+verify_jwt = false
+
+[functions.reminder-check]
+verify_jwt = false

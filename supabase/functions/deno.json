@@ -1,0 +1,26 @@
+{
+  "imports": {
+    "@supabase/functions-js/edge-runtime.d.ts": "jsr:@supabase/functions-js@2/edge-runtime.d.ts",
+    "@supabase/supabase-js": "jsr:@supabase/supabase-js@2",
+    "@negrel/webpush": "jsr:@negrel/webpush@0.5",
+    "@std/async": "jsr:@std/async"
+  },
+  "compilerOptions": {
+    "noUncheckedIndexedAccess": true
+  },
+  "lint": {
+    "rules": {
+      "tags": ["recommended"],
+      "include": [
+        "no-await-in-loop",
+        "no-throw-literal",
+        "guard-for-in",
+        "no-non-null-assertion"
+      ]
+    }
+  },
+  "fmt": {
+    "singleQuote": true,
+    "proseWrap": "preserve"
+  }
+}

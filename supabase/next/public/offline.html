@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1f1b16" />
+    <title>Offline - Iris</title>
+    <style>
+      :root {
+        /* Iris design system colors */
+        --background: #1f1b16;
+        --foreground: #faf6f3;
+        --accent: #c45c26;
+        --muted: #262220;
+        --muted-foreground: #b8aea6;
+        --border: #3e3634;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          'Segoe UI',
+          Roboto,
+          sans-serif;
+        background-color: var(--background);
+        color: var(--foreground);
+        min-height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem;
+        text-align: center;
+      }
+
+      .container {
+        max-width: 24rem;
+        width: 100%;
+      }
+
+      .icon {
+        width: 4rem;
+        height: 4rem;
+        margin: 0 auto 1.5rem;
+        background-color: var(--muted);
+        border-radius: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .icon svg {
+        width: 2rem;
+        height: 2rem;
+        color: var(--accent);
+      }
+
+      h1 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+        color: var(--foreground);
+      }
+
+      p {
+        font-size: 1rem;
+        color: var(--muted-foreground);
+        line-height: 1.5;
+        margin-bottom: 1.5rem;
+      }
+
+      button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9375rem;
+        font-weight: 500;
+        color: var(--foreground);
+        background-color: var(--accent);
+        border: none;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        transition: opacity 0.15s ease;
+        min-height: 48px;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      button:hover {
+        opacity: 0.9;
+      }
+
+      button:active {
+        opacity: 0.8;
+      }
+
+      button svg {
+        width: 1.125rem;
+        height: 1.125rem;
+      }
+
+      .brand {
+        position: absolute;
+        bottom: env(safe-area-inset-bottom, 1.5rem);
+        left: 50%;
+        transform: translateX(-50%);
+        padding-bottom: 1.5rem;
+        font-size: 0.875rem;
+        color: var(--muted-foreground);
+        opacity: 0.6;
+      }
+
+      @media (max-height: 500px) {
+        .brand {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="icon">
+        <!-- Cloud off icon -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3 3l18 18M10.5 6.75a4.5 4.5 0 0 1 4.5 4.5v.75m-9 3.75A4.5 4.5 0 0 1 4.5 10.5c0-2.485 2.015-4.5 4.5-4.5m5.25 9h3.75a3 3 0 0 0 2.121-5.121"
+          />
+        </svg>
+      </div>
+
+      <h1>You're offline</h1>
+      <p>
+        Check your internet connection and try again. Your data is safe and will sync when you're
+        back online.
+      </p>
+
+      <button onclick="window.location.reload()">
+        <!-- Refresh icon -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"
+          />
+        </svg>
+        Try again
+      </button>
+    </div>
+
+    <div class="brand">Iris</div>
+  </body>
+</html>

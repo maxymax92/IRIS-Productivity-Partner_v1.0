@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+
+# Build output
+.next/
+out/
+
+# Generated types
+types/database.types.ts
+
+# Package lock
+package-lock.json
+
+# Tailwind
+*.css
