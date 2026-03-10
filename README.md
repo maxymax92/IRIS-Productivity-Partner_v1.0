@@ -29,7 +29,7 @@
 
 ---
 
-Iris is a conversational AI with persistent memory, real tools, and a personality that adapts to yours. She remembers what you told her last month, notices when you keep dodging the same task, and won't give you ten options when you need one answer. She uses British English, she has opinions about your priorities, and she'll tell you your email draft is too long.
+Iris is a conversational AI with persistent memory, real tools, and a personality that adapts to yours. She remembers what you told her last month, notices when you keep dodging the same task, and won't give you ten options when you need one answer. She has opinions about your priorities, and she'll tell you your email draft is too long.
 
 She's a PWA built on Next.js 16, powered by Claude, backed by Supabase, and fully self-hostable. Every layer — from the Postgres migrations to the streaming UI to the system prompt — is hand-authored and documented.
 
@@ -43,7 +43,7 @@ She's a PWA built on Next.js 16, powered by Claude, backed by Supabase, and full
 
 <br />
 
-### She remembers things
+### She remembers things really well
 
 Two-table system: permanent knowledge (`knowledge_embeddings`, pgvector) for facts that don't change, and episodic memory (`semantic_memory`) for session context that auto-expires. Write-time dedup at 0.85 cosine similarity so memory grows without bloating. Products like [Mem0](https://mem0.ai) and [Letta](https://www.letta.com/) do this as managed services — Iris rolls its own on Postgres because self-hosted means self-hosted, and because I wanted to understand the problem at the storage layer.
 
@@ -175,6 +175,12 @@ Fork it, branch it, run `npm run gate:ci` (ESLint + Deno lint + typecheck + Pret
 - [`docs/architecture.md`](docs/architecture.md) — ~1,000-line architecture spec with Mermaid diagrams, 5-phase message lifecycle, and trade-off rationale
 - [`docs/features.md`](docs/features.md) — every feature documented: chat, memory, files, notifications, design system, auth, locale
 - [`SECURITY.md`](SECURITY.md) — vulnerability reporting
+
+## What's next:
+- Packaged desktop app, with coding abilities & local git file directory UI
+- A more universal adapter sitting between AI UI SDK vs LLM agent SDKs so that as a user, you can plug in a wide variety of providers
+- Further evaluation & refinement of system prompts AND replacing static prompts with self healing & refining dynamic prompts with guardrails
+- Iris generated content enhanced UI/ UX + previews with Iris also having more freedom of what/ how things are generated
 
 ---
 
