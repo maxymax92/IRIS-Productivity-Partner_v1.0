@@ -29,7 +29,7 @@
 
 ---
 
-Iris is a conversational AI with persistent memory, real tools, and a personality that adapts to yours. She remembers what you told her last month, notices when you keep dodging the same task, and won't give you ten options when you need one answer. She has opinions about your priorities, and she'll tell you your email draft is too long.
+Iris is a conversational AI Agent with persistent memory, real tools, custom MCPs, and a personality + communication style that dynamically adapts to yours. She remembers what you told her last month, notices when you keep dodging the same task, and won't give you ten options when you need one answer. She has opinions about your priorities, and she'll tell you your email draft is too long.
 
 She's a PWA built on Next.js 16, powered by Claude, backed by Supabase, and fully self-hostable. Every layer — from the Postgres migrations to the streaming UI to the system prompt — is hand-authored and documented.
 
